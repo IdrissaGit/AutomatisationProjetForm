@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="io.cucumber.junit.CucumberOptions"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.en.Given"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.en.Then"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
+</qualifiedTypeNameHistroy>

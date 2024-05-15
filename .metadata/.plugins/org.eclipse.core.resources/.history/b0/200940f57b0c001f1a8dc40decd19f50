@@ -1,0 +1,12 @@
+Feature: Contact form autom
+
+Scenario: remplissage des champs obligatoires
+    Etant donné un utilisateur accède à la 
+    Et clique sur 
+    Lorsque l'utilisateur clique 
+    Et saisi une adresse mail valide
+    Et saisi 
+    Et saisit les champs obligatoires
+    Et clique sur le bouton créer mon compte
+    Alors  
+    Et Mon compte s’affichent dans le header

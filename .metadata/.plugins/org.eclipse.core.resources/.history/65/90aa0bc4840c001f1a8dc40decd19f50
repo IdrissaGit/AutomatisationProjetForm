@@ -1,0 +1,49 @@
+package stepDefinition;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+import static org.junit.Assert.assertEquals;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class RemplissageFormStepDef {
+	@Given("un utilisateur accède au formulaire de contact")
+	public void un_utilisateur_accède_au_formulaire_de_contact() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.setProperty("webdriver.geckodriver", ".\\Include\\geckodriver.exe");
+	    WebDriver driver = new FirefoxDriver();
+	    driver.get("https://form.jotform.com/241263471608354");
+	    assertEquals("Formulaire de contact basique", driver.getTitle());
+	    System.out.println(driver.getTitle());
+	    
+	}
+	@Given("saisit les champs obligatoires")
+	public void saisit_les_champs_obligatoires() {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+	@Given("selectionne le secteur de l'entreprise")
+	public void selectionne_le_secteur_de_l_entreprise() {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+	@Given("accepte le traitement des données")
+	public void accepte_le_traitement_des_données() {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+	@Given("clique sur le bouton envoyer")
+	public void clique_sur_le_bouton_envoyer() {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+	@Then("le message {string} s'affiche")
+	public void le_message_s_affiche(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+
+}

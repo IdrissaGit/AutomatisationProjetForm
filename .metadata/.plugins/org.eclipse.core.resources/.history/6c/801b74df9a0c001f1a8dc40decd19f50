@@ -1,0 +1,79 @@
+package stepDefinition;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+import static org.junit.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class RemplissageFormStepDef {
+	public static WebDriver driver;
+	public static String prenom = "M. Amine";
+	public static String nom = "DUTEST";
+	public static String entreprise = "MonEnt";
+	public static String adresse = "1 rue de Paris, 75000";
+	public static String mail = "test@ent.fr";
+	public static String indicatif = "0033 ";
+	public static String tel = "1122334455 ";
+	public static String texte = "contact contact contact contact contact contact";
+	private String message;
+	
+	@Given("un utilisateur accède au formulaire de contact")
+	public void un_utilisateur_accède_au_formulaire_de_contact() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.setProperty("webdriver.geckodriver", ".\\Include\\geckodriver.exe");
+	    driver = new FirefoxDriver();
+	    driver.get("https://form.jotform.com/241263471608354");
+	    assertEquals("Formulaire de contact basique", driver.getTitle());
+	    System.out.println(driver.getTitle());
+	    
+	}
+	@Given("saisit les champs obligatoires")
+	public void saisit_les_champs_obligatoires() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("first_24")).sendKeys("prenom");
+		driver.findElement(By.id("last_24")).sendKeys("nom");
+		driver.findElement(By.id("input_26")).sendKeys("entreprise");
+		driver.findElement(By.id("input_15")).sendKeys("adresse");
+		driver.findElement(By.id("input_3")).sendKeys("mail");
+		driver.findElement(By.id("input_25_area")).sendKeys("indicatif");
+		driver.findElement(By.id("input_25_phone")).sendKeys("tel");
+		driver.findElement(By.id("input_6")).sendKeys("texte");
+		//driver.findElement(By.id("")).sendKeys("");
+	    
+	}
+	@Given("selectionne le secteur de l'entreprise")
+	public void selectionne_le_secteur_de_l_entreprise() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("input_8")).click();
+		driver.findElement(By.name("Restauration.")).click();
+	}
+	@Given("accepte le traitement des données")
+	public void accepte_le_traitement_des_données() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("input_12_0")).click();
+		try {
+			driver.wait(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@Given("clique sur le bouton envoyer")
+	public void clique_sur_le_bouton_envoyer() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("input_16")).click();
+	}
+	@Then("le message {string} s'affiche")
+	public void le_message_s_affiche(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+		message = driver.findElement(By.id("")).getAttribute(string);
+		assertEquals(string, message);
+	    System.out.println(message);
+	}
+
+
+}
